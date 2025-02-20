@@ -8,6 +8,7 @@ import com.school_management_system.model.Student;
 import com.school_management_system.repository.StudentRepository;
 import java.io.File;
 import java.util.List;
+import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -27,5 +28,9 @@ public class StudentService {
     
     public Student saveStudent(Student student){
         return studentRepository.save(student);
+    }
+    
+    public Optional<Student> getStudentById(Long id){
+        return studentRepository.findById(id);
     }
 }
